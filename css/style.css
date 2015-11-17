@@ -17,11 +17,14 @@
     padding: 8px;
 }
 
-.demo-button {
+#startBtn {
 	display: center-block;
-	/*text-align: center;*/
-	background: "green";
-	font-size: 20px;
-	/*background:center;*/
+	background-size: 50px;
+	font-size: 20px;	
+}
 
+.btn-group {
+	display: center-block;
+	background-size: 50px;
+	font-size: 20px;
 }

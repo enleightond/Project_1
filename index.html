@@ -17,23 +17,71 @@
 </head>
 <body>
 	<div class="jumbotron">
-	<h3>Welcome to:</h3> 
-	<h1>Javascript Flashcards</h1>
+		<h3>Welcome to:</h3> 
+		<h1>Javascript Flashcards</h1>
 	</div>
 	<form action="" method="post" id="userInfo">
-	<div id="enter">
-		<p><label>Enter your name:</label>
-		<input type="text" name="name" id="name" class="stored" value="" />
-		</p>
-		<p>
-		<label>Enter your email:</label>
-		<input type="text" name="email" id="email" class="stored" value="" />
-		</p>
-		<p>
-		<input type="submit" class="btn btn-success" value="Begin!" />
-		</p>
-	</div>
-	</form>	
+		<div id="enter">
+			<p>
+				<label>Enter your name:</label>
+				<input type="text" name="name" id="name" class="stored" value="" />
+			</p>
+			<p>
+				<label>Enter your email:</label>
+				<input type="text" name="email" id="email" class="stored" value="" />
+			</p>
+			<p>
+				<input type="submit" id="startBtn" class="btn btn-success" value="Begin!" />
+			</p>
+		</div>
+	</form>
+
+	<form action="" method="post" id="userChoice">
+		<div id="choice">
+			<p>
+				<h2>Now lets get started!</h2>
+					<ol>
+						<li>Pick what you'd like to do.</li>
+						<li>Then choose the category from the dropdown menu.</li>
+						<li>Finally, choose your difficulty level.</li>
+					</ol>
+			</p>
+		</div>
+		<div class="btn-group">
+			<button type="button" id="study" class="btn btn-success dropdown-toggle" toggle-data="dropdown"  aria-haspopup="true" aria-expanded="false">
+    		Study<span class="caret"></span>
+    		<ul class="dropdown-menu">
+			    <li><a href="#">Arrays</a></li>
+			    <li><a href="#">Objects</a></li>
+			    <li><a href="#">Functions</a></li>
+			    <li><a href="#">Callbacks</a></li>
+		  	</ul>
+			</button>	
+		</div>	
+		<div class="btn-group">
+			<button type="button" id="practice" class="btn btn-warning dropdown-toggle" toggle-data="dropdown"  aria-haspopup="true" aria-expanded="false">
+    		Practice<span class="caret"></span>
+    		<ul class="dropdown-menu">
+			    <li><a href="#">Arrays</a></li>
+			    <li><a href="#">Objects</a></li>
+			    <li><a href="#">Functions</a></li>
+			    <li><a href="#">Callbacks</a></li>
+		  	</ul>
+			</button>	
+		</div>	
+		<div class="btn-group">
+			<button type="button" id="test" class="btn btn-danger dropdown-toggle" toggle-data="dropdown"  aria-haspopup="true" aria-expanded="false">
+    		Test<span class="caret"></span>
+    		<ul class="dropdown-menu">
+			    <li><a href="#">Arrays</a></li>
+			    <li><a href="#">Objects</a></li>
+			    <li><a href="#">Functions</a></li>
+			    <li><a href="#">Callbacks</a></li>
+		  	</ul>
+			</button>	
+		</div>	
+	</form>
+
 
 
 </body>
