@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+$('#userChoice').hide();
 //onClickEvent(){}
 
 $("#startBtn").on('click', function(event){
@@ -11,6 +12,12 @@ var userName = $("#name").val(),
 	localStorage.setItem("email",userEmail);
 
 	$('#userInfo').hide();
+
+});
+
+$("#startBtn").on('click', function(event){
+	event.preventDefault();
+	$('#userChoice').show();
 	
 });
 
