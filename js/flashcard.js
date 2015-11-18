@@ -1,6 +1,11 @@
 $(document).ready(function() {
 
 $('#userChoice').hide();
+$('.arrDiff').hide();
+$('.objDiff').hide();
+$('.funDiff').hide();
+$('.calDiff').hide();
+
 //onClickEvent(){}
 
 $("#startBtn").on('click', function(event){
@@ -17,8 +22,38 @@ var userName = $("#name").val(),
 
 $("#startBtn").on('click', function(event){
 	event.preventDefault();
-	$('#userChoice').show();
-	
+	$('#userChoice').show();	
+});
+
+$(".chooseArrDiff").hover(function(event){
+	event.preventDefault();
+	$('.arrDiff').show();	
+},
+	function(event) {
+	$('.arrDiff').hide();
+});
+
+$(".chooseObjDiff").hover(function(event){
+	event.preventDefault();
+	$('.objDiff').show();
+}, function(event) {
+	$('.objDiff').hide();	
+});
+
+$(".chooseFunDiff").hover(function(event){
+	event.preventDefault();
+	$('.funDiff').show();
+},
+	function(event) {
+	$('.funDiff').hide();	
+});
+
+$(".chooseCalDiff").hover(function(event){
+	event.preventDefault();
+	$('.calDiff').show();
+},	
+	function(event) {
+	$('.calDiff').hide();	
 });
 
 
