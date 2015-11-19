@@ -16,15 +16,15 @@
     font-size: 24px;
     padding: 8px;
 }
-
+ 
 #startBtn {
 	display: center-block;
 	background-size: 50px;
 	font-size: 20px;	
 }
 
-h2 {
-	text-align: center;
+.cardImg {
+	display: center-block;
 }
 
 #choice {
@@ -42,8 +42,12 @@ h2 {
 	margin-left: 65px;
 }
 
+.card {
+    
+    background-image: url('../img/3x5_Notecard.jpg');
+    background-repeat: no-repeat;
+    height: 300px;
 
-
-
+}
 
 
