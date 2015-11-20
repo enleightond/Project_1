@@ -77,10 +77,18 @@ $("#startBtn").on('click', function(event){
 //
 //////////////////////////////////////////////
 
-	$(".array").on("click", function(){
+	$("#study").on("click", function(event){
+		//$("#userChoice").hide();
+		var areaToWork = $(event.target).data("areaToWork");
+		var areaDiv = selectOption(study[areaToWork]);
+		
+	})
+
+	$(".arrDiff").on("click", function(event){
 		$("#userChoice").hide();
-		var cardDiv = makeFlashCard()
-		$('#flashCard').append(cardDiv)
+		var level = $(event.target).data("level");
+		var cardDiv = makeFlashCard(study.array[level].title, study.array[level].description);
+		$('#flashCard').append(cardDiv);
 	})
 
 
@@ -90,9 +98,18 @@ $("#startBtn").on('click', function(event){
 
 	var study = {
 		array:{
-			easy: "statement",
-			medium: "something",
-			hard: "something else"
+			easy:{
+				title:"Easy Array",
+				description:"Arrays look like this []"
+			},
+			medium: {
+				title:"Medium Array",
+				description:"Arrays look like this :)"
+			},
+			hard: {
+				title:"Hard Array",
+				description:"Arrays look like this ..|.,"
+			}
 		},
 		objects:{
 			easy: "",
@@ -112,16 +129,16 @@ $("#startBtn").on('click', function(event){
 
 	};
 
-	function makeFlashCard (){
+	function makeFlashCard(titleContent, descriptionContent){
 		var card = $('<div>')
 		card.addClass('card')
 		card.addClass('col-md-5')
 
 
 		var title = $('<h4>')
-		title.html('Array')
+		title.html(titleContent)
 		var description = $('<p>')
-		description.html('Arrays are great!')
+		description.html(descriptionContent)
 
 		card.append(title)
 		card.append(description)

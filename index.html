@@ -22,7 +22,7 @@
 
 		<!-- USER LOGIN FORM -->
 		<form action="" method="post" id="userInfo">
-			<div id="enter">
+			<div id="enterInfo">
 				<p>
 					<label>Enter your name:</label>
 					<input type="text" name="name" id="name" class="stored" value="" />
@@ -39,13 +39,13 @@
 
 		<!-- USER CHOICES / SELECTION BUTTONS -->
 		<form action="" method="post" id="userChoice">
-			<div id="choice">
+			<div id="choiceList" class="col-md-4 col-md-offset-4">
 				<p>
 					<h2>Now lets get started!</h2>
 						<ol>
-							<li>Pick what you'd like to do.</li>
-							<li>Then choose the category from the dropdown menu.</li>
-							<li>Finally, choose your difficulty level.</li>
+							<li>Choose what you'd like to do.</li>
+							<li>Choose a category from the dropdown.</li>
+							<li>Finally, choose the difficulty.</li>
 						</ol>
 				</p>
 			</div>
@@ -57,9 +57,9 @@
 
 					    <li class="chooseArrDiff"><a>Arrays</a>
 					    	<ul class="arrDiff level">
-					    		<li><a class="array" id="array_easy">Easy</a></li>
-					    		<li><a class="array" id="array_medium">Medium</a></li>
-					    		<li><a class="array" id="array_hard">Hard</a></li>
+					    		<li><a data-type="array" data-level="easy">Easy</a></li>
+					    		<li><a data-type="array" data-level="medium">Medium</a></li>
+					    		<li><a data-type="array" data-level="hard">Hard</a></li>
 					    	</ul>
 					    </li>
 
@@ -115,7 +115,7 @@
 			</div>		
 		</form>
 		<!-- FLASH CARD -->
-		<div class="row" id="flashCard">
+		<div class="row col-md-12" id="flashCard">
 				
 		</div>
 	</div>	
