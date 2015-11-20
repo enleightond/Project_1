@@ -5,112 +5,120 @@
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 
-<link rel="stylesheet" type="text/css" href="css/style.css"> 
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
-<script type="text/javascript" src="js/flashcard.js"></script>
 
+<link rel="stylesheet" type="text/css" href="css/style.css"> 
 </head>
 <body>
 	<div class="jumbotron">
 		<h3>Welcome to:</h3> 
 		<h1>Javascript Flashcards</h1>
 	</div>
-	<form action="" method="post" id="userInfo">
-		<div id="enter">
-			<p>
-				<label>Enter your name:</label>
-				<input type="text" name="name" id="name" class="stored" value="" />
-			</p>
-			<p>
-				<label>Enter your email:</label>
-				<input type="text" name="email" id="email" class="stored" value="" />
-			</p>
-			<p>
-				<input type="submit" id="startBtn" class="btn btn-success" value="Begin!" />
-			</p>
-		</div>
-	</form>
+	<div class="container-fluid">
 
-	<form action="" method="post" id="userChoice">
-		<div id="choice">
-			<p>
-				<h2>Now lets get started!</h2>
-					<ol>
-						<li>Pick what you'd like to do.</li>
-						<li>Then choose the category from the dropdown menu.</li>
-						<li>Finally, choose your difficulty level.</li>
-					</ol>
-			</p>
-		</div>
-		<div class="btns col-md-6 col-md-offset-3">
-			<div class="btn-group col-md-4">
-				<button type="button" id="study" class="btn btn-success dropdown-toggle" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
-	    		Study<span class="caret"></span></button>	
-	    		<ul class="dropdown-menu">
-	    		
-				    <li class="chooseArrDiff"><a href="#">Arrays</a>
-				    	<ul class="arrDiff">
-				    		<li><a href="#">Easy</a></li>
-				    		<li><a href="#">Medium</a></li>
-				    		<li><a href="#">Hard</a></li>
-				    	</ul>
-				    </li>
-
-				    <li class="chooseObjDiff"><a href="#">Objects</a>
-				    	<ul class="objDiff">
-				    		<li><a href="#">Easy</a></li>
-				    		<li><a href="#">Medium</a></li>
-				    		<li><a href="#">Hard</a></li>
-				    	</ul>
-				    </li>
-
-				    <li class="chooseFunDiff"><a href="#">Functions</a>
-					    <ul class="funDiff">
-				    		<li><a href="#">Easy</a></li>
-				    		<li><a href="#">Medium</a></li>
-				    		<li><a href="#">Hard</a></li>
-				    	</ul>
-				    </li>
-
-				    <li class="chooseCalDiff"><a href="#">Callbacks</a>
-					    <ul class="calDiff">
-				    		<li><a href="#">Easy</a></li>
-				    		<li><a href="#">Medium</a></li>
-				    		<li><a href="#">Hard</a></li>
-				    	</ul>
-				    </li>
-
-			  	</ul>
-				
-			</div>	
-			<div class="btn-group col-md-4">
-				<button type="button" id="practice" class="btn btn-warning dropdown-toggle" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
-	    		Practice<span class="caret"></span></button>	
-	    		<ul class="dropdown-menu">
-				    <li><a href="#">Arrays</a></li>
-				    <li><a href="#">Objects</a></li>
-				    <li><a href="#">Functions</a></li>
-				    <li><a href="#">Callbacks</a></li>
-			  	</ul>
-				
-			</div>	
-			<div class="btn-group col-md-4">
-				<button type="button" id="test" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
-	    		Test<span class="caret"></span></button>	
-	    		<ul class="dropdown-menu">
-				    <li><a href="#">Arrays</a></li>
-				    <li><a href="#">Objects</a></li>
-				    <li><a href="#">Functions</a></li>
-				    <li><a href="#">Callbacks</a></li>
-			  	</ul>
-				
+		<!-- USER LOGIN FORM -->
+		<form action="" method="post" id="userInfo">
+			<div id="enterInfo">
+				<p>
+					<label>Enter your name:</label>
+					<input type="text" name="name" id="name" class="stored" value="" />
+				</p>
+				<p>
+					<label>Enter your email:</label>
+					<input type="text" name="email" id="email" class="stored" value="" />
+				</p>
+				<p>
+					<input type="submit" id="startBtn" class="btn btn-success" value="Begin!" />
+				</p>
 			</div>
-		</div>		
-	</form>
+		</form>
 
+		<!-- USER CHOICES / SELECTION BUTTONS -->
+		<form action="" method="post" id="userChoice">
+			<div id="choiceList" class="col-md-4 col-md-offset-4">
+				<p>
+					<h2>Now lets get started!</h2>
+						<ol>
+							<li>Choose what you'd like to do.</li>
+							<li>Choose a category from the dropdown.</li>
+							<li>Finally, choose the difficulty.</li>
+						</ol>
+				</p>
+			</div>
+			<div class="btns col-md-6 col-md-offset-3">
+				<div class="btn-group col-md-4">
+					<button type="button" id="study" class="btn btn-success dropdown-toggle" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
+		    		Study<span class="caret"></span></button>	
+		    		<ul class="dropdown-menu">
 
+					    <li class="chooseArrDiff"><a>Arrays</a>
+					    	<ul class="arrDiff level">
+					    		<li><a data-type="array" data-level="easy">Easy</a></li>
+					    		<li><a data-type="array" data-level="medium">Medium</a></li>
+					    		<li><a data-type="array" data-level="hard">Hard</a></li>
+					    	</ul>
+					    </li>
+
+					    <li class="chooseObjDiff"><a>Objects</a>
+					    	<ul class="objDiff level">
+					    		<li><a class="object" id="object_easy">Easy</a></li>
+					    		<li><a class="object" id="object_medium">Medium</a></li>
+					    		<li><a class="obejct" id="object_hard">Hard</a></li>
+					    	</ul>
+					    </li>
+
+					    <li class="chooseFunDiff"><a>Functions</a>
+						    <ul class="funDiff level">
+					    		<li><a class="function" id="function_easy">Easy</a></li>
+					    		<li><a class="function" id="function_medium">Medium</a></li>
+					    		<li><a class="function" id="function_hard">Hard</a></li>
+					    	</ul>
+					    </li>
+
+					    <li class="chooseCalDiff"><a>Callbacks</a>
+						    <ul class="calDiff level">
+					    		<li><a class="callback" id="callback_easy">Easy</a></li>
+					    		<li><a class="callback" id="callback_medium">Medium</a></li>
+					    		<li><a class="callback" id="callback_hard">Hard</a></li>
+					    	</ul>
+					    </li>
+
+				  	</ul>
+					
+				</div>	
+				<div class="btn-group col-md-4">
+					<button type="button" id="practice" class="btn btn-warning dropdown-toggle" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
+		    		Practice<span class="caret"></span></button>	
+		    		<ul class="dropdown-menu">
+					    <li><a>Arrays</a></li>
+					    <li><a>Objects</a></li>
+					    <li><a>Functions</a></li>
+					    <li><a>Callbacks</a></li>
+				  	</ul>
+					
+				</div>	
+				<div class="btn-group col-md-4">
+					<button type="button" id="test" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
+		    		Test<span class="caret"></span></button>	
+		    		<ul class="dropdown-menu">
+					    <li><a>Arrays</a></li>
+					    <li><a>Objects</a></li>
+					    <li><a>Functions</a></li>
+					    <li><a>Callbacks</a></li>
+				  	</ul>
+					
+				</div>
+			</div>		
+		</form>
+		<!-- FLASH CARD -->
+		<div class="row col-md-12" id="flashCard">
+				
+		</div>
+	</div>	
+<script type="text/javascript" src="js/flashcard.js"></script> 
 </body>
 </html>
