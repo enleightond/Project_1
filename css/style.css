@@ -51,7 +51,7 @@ h2 {
 .card {
     background-image: url('../img/3x5_Notecard.jpg');
     background-repeat: no-repeat;
-    display: center-block;
+    display: center;
     height: 300px;
 
 }

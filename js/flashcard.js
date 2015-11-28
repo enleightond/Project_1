@@ -1,12 +1,10 @@
 $(document).ready(function() {
 	$('#userChoice').hide();
-	$('.arrDiff').hide();
-	$('.objDiff').hide();
-	$('.funDiff').hide();
-	$('.calDiff').hide();
+	$('.level').hide();
 	$('#practicePage').hide();
 
-// START BUTTON FUNCTIONALITY
+
+//////////////// START BUTTON FUNCTIONALITY
 
 $("#startBtn").on('click', function(event){
 	event.preventDefault();
@@ -25,118 +23,241 @@ $("#startBtn").on('click', function(event){
 	$('#userChoice').show();	
 });
 
-// NOTES
- 
-// var choices = function(); need to select the subject, and difficulty.
-// userImput === array value --> push into Header/description
+////////////////  MENU AND SUBMENU SELECTION 
 
-// DOM manipulation: need to create or append to html for the subject Divs and Options Divs
-
-// need to clean up the code below, and loop thru for all buttons with same functionality.
-// Must return userInput to be directed to new page. 
-
-// MENU CHOICES REVEAL
-
-	$(".chooseArrDiff").hover(function(event){
+	$("#study, #studyMenu").hover(function(event){
 		event.preventDefault();
-		$('.arrDiff').show();	
+		$('#studyMenu').show();	
 	},
 		function(event) {
-		$('.arrDiff').hide();
+		$('#studyMenu').hide();
 	});
 
-	$(".chooseObjDiff").hover(function(event){
+	$("#practice, #practiceMenu").hover(function(event){
 		event.preventDefault();
-		$('.objDiff').show();
-	}, 
-		function(event) {
-		$('.objDiff').hide();	
-	});
-
-	$(".chooseFunDiff").hover(function(event){
-		event.preventDefault();
-		$('.funDiff').show();
+		$('#practiceMenu').show();	
 	},
 		function(event) {
-		$('.funDiff').hide();	
+		$('#practiceMenu').hide();
 	});
 
-	$(".chooseCalDiff").hover(function(event){
+	$("#test, #testMenu").hover(function(event){
 		event.preventDefault();
-		$('.calDiff').show();
-	},	
+		$('#testMenu').show();	
+	},
 		function(event) {
-		$('.calDiff').hide();	
+		$('#testMenu').hide();
 	});
 
-//////////////////////////////////////////////
+	$(".subMenu").hover(function(event){
+		$(event.target).parent().find('.level').show();	
+	},
+		function(event) {
+		$('.level').hide();
+	});
+////////////////////////////////////////////////
 //
 //
 // BRINGING UP FLASHCARD WITH USER SELECTIONS
 //
-//
-//////////////////////////////////////////////
+//                                             
+////////////////////////////////////////////////
 
-	$("#study").on("click", function(event){
-		//$("#userChoice").hide();
-		var areaToWork = $(event.target).data("areaToWork");
-		var areaDiv = selectOption(study[areaToWork]);
-		
-	})
-
-	$(".arrDiff").on("click", function(event){
+	$(".level").on("click", function(event){
 		$("#userChoice").hide();
+		var type = $(event.target).data("type");
 		var level = $(event.target).data("level");
-		var cardDiv = makeFlashCard(study.array[level].title, study.array[level].description);
+		var cardDiv = makeFlashCard(menuOptions[type][level].title, menuOptions[type][level].description);
 		$('#flashCard').append(cardDiv);
 	})
+	
+	var menuOptions = {
+		study :	{
 
-
-	var selectOption = function() {
-
-	}
-
-	var study = {
-		array:{
-			easy:{
-				title:"Easy Array",
-				description:"Arrays look like this []"
+			array:{
+				easy:{
+					title:"Easy Array",
+					description:"Arrays look like this []"
+				},
+				medium: {
+					title:"Medium Array",
+					description:"Arrays look like this :)"
+				},
+				hard: {
+					title:"Hard Array",
+					description:"Arrays look like this ..|.,"
+				}
 			},
-			medium: {
-				title:"Medium Array",
-				description:"Arrays look like this :)"
+			object:{
+				easy:{
+					title:"Easy Object",
+					description:"Objects look like this {}"
+				},
+				medium:{
+					title:"Medium Object",
+					description:"Objects look like this :)"
+				},
+				hard:{
+					title:"Hard Object",
+					description:"Objects look like this ..|.,"
+				}
 			},
-			hard: {
-				title:"Hard Array",
-				description:"Arrays look like this ..|.,"
+			func:{
+				easy:{
+					title:"Easy Function",
+					description:"Function look like this ()"
+				},
+				medium:{
+					title:"Medium Function",
+					description:"Function look like this :)"
+				},
+				hard:{
+					title:"Hard Function",
+					description:"Function look like this ..|.,"
+				}
+			},
+			callback:{
+				easy: {
+					title:"Easy Callback",
+					description:"Callbacks look like this {([])}"
+				},
+				medium: {
+					title:"Medium Callback",
+					description:"Callback look like this :)"
+				},
+				hard:{
+					title:"Hard Callback",
+					description:"Callbacks look like this ..|.,"
+				}
 			}
 		},
-		objects:{
-			easy: "",
-			medium: "",
-			hard: ""
-		},
-		funktion:{
-			easy: "",
-			medium: "",
-			hard: ""
-		},
-		callbacks:{
-			easy: "",
-			medium: "",
-			hard: ""
-		}
 
-	};
+		practice : {
+			array:{
+				easy:{
+					title:"pEasy Array",
+					description:"Arrays look like this []"
+				},
+				medium: {
+					title:"pMedium Array",
+					description:"Arrays look like this :)"
+				},
+				hard: {
+					title:"pHard Array",
+					description:"Arrays look like this ..|.,"
+				}
+			},
+			objects:{
+				easy:{
+					title:"Easy Object",
+					description:"Objects look like this {}"
+				},
+				medium:{
+					title:"Medium Object",
+					description:"Objects look like this :)"
+				},
+				hard:{
+					title:"Hard Object",
+					description:"Objects look like this ..|.,"
+				}
+			},
+			funktion:{
+				easy:{
+					title:"Easy Function",
+					description:"Function look like this ()"
+				},
+				medium:{
+					title:"Medium Function",
+					description:"Function look like this :)"
+				},
+				hard:{
+					title:"Hard Function",
+					description:"Function look like this ..|.,"
+				}
+			},
+			callbacks:{
+				easy: {
+					title:"Easy Callback",
+					description:"Callbacks look like this {([])}"
+				},
+				medium: {
+					title:"Medium Callback",
+					description:"Callback look like this :)"
+				},
+				hard:{
+					title:"Hard Callback",
+					description:"Callbacks look like this ..|.,"
+				}
+			}
+		},
+
+		test : {
+			array:{
+				easy:{
+					title:"tEasy Array",
+					description:"Arrays look like this []"
+				},
+				medium: {
+					title:"tMedium Array",
+					description:"Arrays look like this :)"
+				},
+				hard: {
+					title:"tHard Array",
+					description:"Arrays look like this ..|.,"
+				}
+			},
+			objects:{
+				easy:{
+					title:"Easy Object",
+					description:"Objects look like this {}"
+				},
+				medium:{
+					title:"Medium Object",
+					description:"Objects look like this :)"
+				},
+				hard:{
+					title:"Hard Object",
+					description:"Objects look like this ..|.,"
+				}
+			},
+			funktion:{
+				easy:{
+					title:"Easy Function",
+					description:"Function look like this ()"
+				},
+				medium:{
+					title:"Medium Function",
+					description:"Function look like this :)"
+				},
+				hard:{
+					title:"Hard Function",
+					description:"Function look like this ..|.,"
+				}
+			},
+			callbacks:{
+				easy: {
+					title:"Easy Callback",
+					description:"Callbacks look like this {([])}"
+				},
+				medium: {
+					title:"Medium Callback",
+					description:"Callback look like this :)"
+				},
+				hard:{
+					title:"Hard Callback",
+					description:"Callbacks look like this ..|.,"
+				}
+			}
+		}
+	}
 
 	function makeFlashCard(titleContent, descriptionContent){
 		var card = $('<div>')
-		card.addClass('card')
-		card.addClass('col-md-5')
-
-
+		card.addClass('card col-md-4 col-md-offset-4')
+		
 		var title = $('<h4>')
 		title.html(titleContent)
+
 		var description = $('<p>')
 		description.html(descriptionContent)
 
@@ -146,10 +267,5 @@ $("#startBtn").on('click', function(event){
 		return card;
 
 	}
-
-
-
-
-
 
 });
