@@ -1,77 +1,5 @@
-$(document).ready(function() {
-	$('#userChoice').hide();
-	$('.level').hide();
-	$('#practicePage').hide();
-}
 
-//////////////// START BUTTON FUNCTIONALITY
-
-$("#startBtn").on('click', function(event){
-	event.preventDefault();
-var userName = $("#name").val(),
-	userEmail = $("#email").val();
-	
-	localStorage.setItem("name",userName);    
-	localStorage.setItem("email",userEmail);
-
-	$('#userInfo').hide();
-
-});
-
-$("#startBtn").on('click', function(event){
-	event.preventDefault();
-	$('#userChoice').show();	
-});
-
-////////////////  MENU AND SUBMENU SELECTION 
-
-	$(".submenu").hover(function(event){
-		event.preventDefault();
-		$('.submenu').show();	
-	},
-		function(event) {
-		$('.submenu').hide();
-	});
-
-	$("#practice, #practiceMenu").hover(function(event){
-		event.preventDefault();
-		$('#practiceMenu').show();	
-	},
-		function(event) {
-		$('#practiceMenu').hide();
-	});
-
-	$("#test, #testMenu").hover(function(event){
-		event.preventDefault();
-		$('#testMenu').show();	
-	},
-		function(event) {
-		$('#testMenu').hide();
-	});
-
-	$(".subMenu").hover(function(event){
-		$(event.target).parent().find('.level').show();	
-	},
-		function(event) {
-		$('.level').hide();
-	});
-////////////////////////////////////////////////
-//
-//
-// BRINGING UP FLASHCARD WITH USER SELECTIONS
-//
-//                                             
-////////////////////////////////////////////////
-
-	$(".level").on("click", function(event){
-		$("#userChoice").hide();
-		var type = $(event.target).data("type");
-		var level = $(event.target).data("level");
-		var cardDiv = makeFlashCard(menuOptions[type][level].title, menuOptions[type][level].description);
-		$('#flashCard').append(cardDiv);
-	})
-	
-	var menuOptions {
+var menuOptions = {
 		study :	{
 
 			array:{
@@ -268,4 +196,77 @@ $("#startBtn").on('click', function(event){
 
 	}
 
+$(document).ready(function() {
+	$('#userChoice').hide();
+	$('.level').hide();
+	$('#practicePage').hide();
+
+
+//////////////// START BUTTON FUNCTIONALITY
+
+$("#startBtn").on('click', function(event){
+	event.preventDefault();
+var userName = $("#name").val(),
+	userEmail = $("#email").val();
+	
+	localStorage.setItem("name",userName);    
+	localStorage.setItem("email",userEmail);
+
+	$('#userInfo').hide();
+	$('#userChoice').show();
+	console.log('yo')	
+
 });
+
+////////////////  MENU AND SUBMENU SELECTION 
+
+	$("#studyMenu, .submenu").hover(function(event){
+		event.preventDefault();
+		$('.submenu').show();	
+	},
+		function(event) {
+		$('.submenu').hide();
+	});
+
+	$("#practice, #practiceMenu").hover(function(event){
+		event.preventDefault();
+		$('#practiceMenu').show();	
+	},
+		function(event) {
+		$('#practiceMenu').hide();
+	});
+
+	$("#test, #testMenu").hover(function(event){
+		event.preventDefault();
+		$('#testMenu').show();	
+	},
+		function(event) {
+		$('#testMenu').hide();
+	});
+
+	$(".subMenu").hover(function(event){
+		$(event.target).parent().find('.level').show();	
+	},
+		function(event) {
+		$('.level').hide();
+	});
+////////////////////////////////////////////////
+//
+//
+// BRINGING UP FLASHCARD WITH USER SELECTIONS
+//
+//                                             
+////////////////////////////////////////////////
+
+	$(".level").on("click", function(event){
+		$("#userChoice").hide();
+		var type = $(event.target).data("type");
+		var level = $(event.target).data("level");
+		var cardDiv = makeFlashCard(menuOptions.study[type][level].title, menuOptions.study[type][level].description);
+		$('#flashCard').append(cardDiv);
+	});
+	
+
+
+});
+	
