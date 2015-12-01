@@ -2,7 +2,7 @@ $(document).ready(function() {
 	$('#userChoice').hide();
 	$('.level').hide();
 	$('#practicePage').hide();
-
+}
 
 //////////////// START BUTTON FUNCTIONALITY
 
@@ -25,12 +25,12 @@ $("#startBtn").on('click', function(event){
 
 ////////////////  MENU AND SUBMENU SELECTION 
 
-	$("#study, #studyMenu").hover(function(event){
+	$(".submenu").hover(function(event){
 		event.preventDefault();
-		$('#studyMenu').show();	
+		$('.submenu').show();	
 	},
 		function(event) {
-		$('#studyMenu').hide();
+		$('.submenu').hide();
 	});
 
 	$("#practice, #practiceMenu").hover(function(event){
@@ -71,7 +71,7 @@ $("#startBtn").on('click', function(event){
 		$('#flashCard').append(cardDiv);
 	})
 	
-	var menuOptions = {
+	var menuOptions {
 		study :	{
 
 			array:{
