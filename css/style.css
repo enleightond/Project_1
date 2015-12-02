@@ -8,7 +8,6 @@
 }
 
 #enterInfo {
-
 	margin:0 auto;
     border: 5px solid #696969;
     text-align: center;
@@ -17,7 +16,7 @@
     font-size: 24px;
     padding: 8px;
 }
- 
+
 #startBtn {
 	display: center-block;
 	background-size: 50px;
@@ -25,11 +24,10 @@
 }
 
 #userChoice {
-    text-align: center;
+	text-align: center;
 }
 
-#choiceList {
-	
+#choiceList {	
     text-align: left; 
     width: 50%;
     font-size: 24px;
@@ -37,23 +35,22 @@
 }
 
 h2 {
-    margin-left: 60px;
+    margin-left: 100px;
 }
 
-#study, #practice, #test {
+#study, #practice, #test {	
 	display: center-block;
 	background-size: 50px;
 	font-size: 20px;
 	width: 100px;
-	
+	margin-left: 45px;	
 }
 
 .card {
     background-image: url('../img/3x5_Notecard.jpg');
     background-repeat: no-repeat;
-    display: center-block;
+    display: center;
     height: 300px;
-
 }
 
 
