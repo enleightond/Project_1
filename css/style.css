@@ -1,0 +1,56 @@
+.jumbotron {
+	font-style: italic;
+	text-align: center;
+	margin-bottom: 20px; 
+	border-bottom: 5px solid #696969;
+	border-top: 5px solid #696969;
+	padding: 10px;
+}
+
+#enterInfo {
+	margin:0 auto;
+    border: 5px solid #696969;
+    text-align: center;
+    border-radius: 9px;
+    width: 50%;
+    font-size: 24px;
+    padding: 8px;
+}
+
+#startBtn {
+	display: center-block;
+	background-size: 50px;
+	font-size: 20px;	
+}
+
+#userChoice {
+	text-align: center;
+}
+
+#choiceList {	
+    text-align: left; 
+    width: 50%;
+    font-size: 24px;
+    padding: 8px;
+}
+
+h2 {
+    margin-left: 100px;
+}
+
+#study, #practice, #test {	
+	display: center-block;
+	background-size: 50px;
+	font-size: 20px;
+	width: 100px;
+	margin-left: 45px;	
+}
+
+.card {
+    background-image: url('../img/3x5_Notecard.jpg');
+    background-repeat: no-repeat;
+    display: center;
+    height: 300px;
+}
+
+
